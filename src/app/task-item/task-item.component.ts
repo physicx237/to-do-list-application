@@ -25,5 +25,7 @@ export class TaskItemComponent {
 
   public deleteTask(id: number) {
     this.taskService.deleteTask(id);
+
+    console.log('Hello!');
   }
 }
