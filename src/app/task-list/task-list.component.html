@@ -1,0 +1,11 @@
+<div>
+  <button routerLink="/task-form" [queryParams]="{ mode: 'add' }">
+    Create Task
+  </button>
+</div>
+
+<ul class="task-list">
+  <li *ngFor="let task of tasks$ | async" class="task-item">
+    <app-task-item [task]="task"></app-task-item>
+  </li>
+</ul>

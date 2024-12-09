@@ -1,0 +1,24 @@
+<div class="task-item">
+  <div class="task-item__description">{{ task.description }}</div>
+
+  <div class="task-item__checkbox-and-buttons-wrapper">
+    <div class="task-item__checkbox">
+      <input
+        #checkbox
+        type="checkbox"
+        [checked]="task.isCompleted"
+        (change)="changeTaskCompleteStatus(task, checkbox.checked)"
+      />
+    </div>
+
+    <div class="task-item__edit-button">
+      <button routerLink="../task-form" [queryParams]="{ mode: 'edit' }">
+        Edit Task
+      </button>
+    </div>
+
+    <div class="task-item__delete-button">
+      <button (click)="deleteTask(task.id)">Delete Task</button>
+    </div>
+  </div>
+</div>
